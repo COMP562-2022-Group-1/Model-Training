@@ -33,4 +33,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3.6.1
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./_build/_page/US2016_Elections_code/html/US2016_Elections_code.html
+        publish_dir: ./_build/_page/US2016_Elections_code/html/
