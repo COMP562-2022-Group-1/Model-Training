@@ -27,6 +27,7 @@ jobs:
     - name: Build the book
       run: |
         jupyter-book build US2016_Elections_code.ipynb
+        ls
 
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
