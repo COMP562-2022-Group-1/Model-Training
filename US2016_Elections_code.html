@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data Preprocessing &#8212; My Jupyter Book</title>
+    <title>USA Elections &#8212; My Jupyter Book</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -149,28 +149,65 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Data Preprocessing
+   USA Elections
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#xgboost-classifier-model">
-   XGBoost Classifier Model
+  <a class="reference internal nav-link" href="#installing-the-relevant-packages">
+   Installing the Relevant Packages
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#random-forest-classifier-model">
-   Random Forest Classifier Model
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#logistic-regression-model">
-   Logistic Regression Model
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ensemble-model-with-all-models">
-   Ensemble Model with all models
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing-the-libraries">
+     Importing the libraries
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-preprocessing">
+     Data Preprocessing
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#find-out-the-correlation-between-each-variables">
+     Find out the Correlation between each variables
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#encoding-the-categorical-value">
+     Encoding the Categorical Value
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#correcting-the-distribution-of-the-data">
+     Correcting the Distribution of the data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#xgboost-classifier-model">
+     XGBoost Classifier Model
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#random-forest-classifier-model">
+     Random Forest Classifier Model
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logistic-regression-model">
+     Logistic Regression Model
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ensemble-model-with-all-models">
+     Ensemble Model with all models
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conclusion">
+     Conclusion
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -182,7 +219,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Data Preprocessing</h1>
+                <h1>USA Elections</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -194,28 +231,65 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Data Preprocessing
+   USA Elections
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#xgboost-classifier-model">
-   XGBoost Classifier Model
+  <a class="reference internal nav-link" href="#installing-the-relevant-packages">
+   Installing the Relevant Packages
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#random-forest-classifier-model">
-   Random Forest Classifier Model
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#logistic-regression-model">
-   Logistic Regression Model
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ensemble-model-with-all-models">
-   Ensemble Model with all models
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing-the-libraries">
+     Importing the libraries
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-preprocessing">
+     Data Preprocessing
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#find-out-the-correlation-between-each-variables">
+     Find out the Correlation between each variables
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#encoding-the-categorical-value">
+     Encoding the Categorical Value
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#correcting-the-distribution-of-the-data">
+     Correcting the Distribution of the data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#xgboost-classifier-model">
+     XGBoost Classifier Model
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#random-forest-classifier-model">
+     Random Forest Classifier Model
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logistic-regression-model">
+     Logistic Regression Model
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ensemble-model-with-all-models">
+     Ensemble Model with all models
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conclusion">
+     Conclusion
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -226,7 +300,16 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="cell docutils container">
+  <div class="tex2jax_ignore mathjax_ignore section" id="usa-elections">
+<h1>USA Elections<a class="headerlink" href="#usa-elections" title="Permalink to this headline">¶</a></h1>
+<p>In this projects, we will be looking at how individuals vote for their applicants based on a questionaire.</p>
+<p>Dataset is from <a class="reference external" href="https://www.vanderbilt.edu/lapop/ab2016.php">AmericasBarometer 2017 United States Questionnaire</a>.</p>
+<p>The questions are found <a class="reference external" href="https://github.com/COMP562-2022-Group-1/Model-Training/blob/main/Questionaire.pdf">here</a>.</p>
+<p>The project is found on our <a class="reference external" href="https://github.com/COMP562-2022-Group-1/Model-Training">Github</a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="installing-the-relevant-packages">
+<h1>Installing the Relevant Packages<a class="headerlink" href="#installing-the-relevant-packages" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Installing the relevant libraries</span>
 <span class="o">!</span>pip install pandas seaborn matplotlib scikit-learn xgboost scikit-plot imbalanced-learn
@@ -241,20 +324,20 @@ Requirement already satisfied: scikit-learn in /opt/hostedtoolcache/Python/3.8.1
 Requirement already satisfied: xgboost in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (1.6.0)
 Requirement already satisfied: scikit-plot in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (0.3.7)
 Requirement already satisfied: imbalanced-learn in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (0.9.0)
-Requirement already satisfied: numpy&gt;=1.18.5 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from pandas) (1.22.3)
 Requirement already satisfied: python-dateutil&gt;=2.8.1 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from pandas) (2.8.2)
 Requirement already satisfied: pytz&gt;=2020.1 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from pandas) (2022.1)
+Requirement already satisfied: numpy&gt;=1.18.5 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from pandas) (1.22.3)
 Requirement already satisfied: scipy&gt;=1.0 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from seaborn) (1.8.0)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from matplotlib) (4.33.2)
+Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from matplotlib) (0.11.0)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from matplotlib) (1.4.2)
+Requirement already satisfied: pyparsing&gt;=2.2.1 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from matplotlib) (3.0.8)
+Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from matplotlib) (21.3)
+Requirement already satisfied: pillow&gt;=6.2.0 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from matplotlib) (9.1.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from matplotlib) (0.11.0)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from matplotlib) (1.4.2)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from matplotlib) (4.33.2)
-Requirement already satisfied: pyparsing&gt;=2.2.1 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from matplotlib) (3.0.8)
-Requirement already satisfied: pillow&gt;=6.2.0 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from matplotlib) (9.1.0)
-Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from matplotlib) (21.3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: joblib&gt;=0.11 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from scikit-learn) (1.1.0)
 Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from scikit-learn) (3.1.0)
-Requirement already satisfied: joblib&gt;=0.11 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from scikit-learn) (1.1.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from python-dateutil&gt;=2.8.1-&gt;pandas) (1.16.0)
@@ -262,6 +345,8 @@ Requirement already satisfied: joblib&gt;=0.11 in /opt/hostedtoolcache/Python/3.
 </div>
 </div>
 </div>
+<div class="section" id="importing-the-libraries">
+<h2>Importing the libraries<a class="headerlink" href="#importing-the-libraries" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -279,15 +364,21 @@ Requirement already satisfied: joblib&gt;=0.11 in /opt/hostedtoolcache/Python/3.
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="data-preprocessing">
-<h1>Data Preprocessing<a class="headerlink" href="#data-preprocessing" title="Permalink to this headline">¶</a></h1>
+<h2>Data Preprocessing<a class="headerlink" href="#data-preprocessing" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;US_Americasbarometer_2017.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import CSV of data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;US_Americasbarometer_2017.csv&#39;</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># q12m and q12f is removed because there were too many na</span>
+<span class="c1"># q1 and q2 because question is not in given in the questionnaire</span>
 <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;q12m&#39;</span><span class="p">,</span> <span class="s1">&#39;q12f&#39;</span><span class="p">,</span> <span class="s1">&#39;q1&#39;</span><span class="p">,</span> <span class="s1">&#39;q2&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> 
-<span class="c1">#drop vb3n because it is the output, q12m and q12f because too many na, q1 and q2 because question is not in given questionnaire</span>
 <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Extract &#39;vb3n&#39; as it contains the output.</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;vb3n&#39;</span><span class="p">]</span>
 <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;vb3n&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -379,7 +470,8 @@ memory usage: 576.0 KB
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Taking a look at what is left</span>
+<span class="n">df</span>
 </pre></div>
 </div>
 </div>
@@ -695,6 +787,10 @@ memory usage: 576.0 KB
 <p>1117 rows × 65 columns</p>
 </div></div></div>
 </div>
+</div>
+<div class="section" id="find-out-the-correlation-between-each-variables">
+<h2>Find out the Correlation between each variables<a class="headerlink" href="#find-out-the-correlation-between-each-variables" title="Permalink to this headline">¶</a></h2>
+<p>Variables which have high correlation are redundant and one of them can be removed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Colinearity plot</span>
@@ -707,15 +803,15 @@ memory usage: 576.0 KB
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="_images/US2016_Elections_code_6_1.png" src="_images/US2016_Elections_code_6_1.png" />
+<img alt="_images/US2016_Elections_code_10_1.png" src="_images/US2016_Elections_code_10_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Look for high colinearity and drop columns</span>
 <span class="n">greater</span> <span class="o">=</span> <span class="n">cor</span><span class="o">.</span><span class="n">le</span><span class="p">(</span><span class="o">-</span><span class="mf">0.9</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">cor</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">cor</span><span class="p">)):</span>
         <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="p">:</span>
             <span class="k">continue</span>
         <span class="k">elif</span> <span class="n">greater</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]:</span>
@@ -725,7 +821,6 @@ memory usage: 576.0 KB
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20 24
-24 20
 </pre></div>
 </div>
 </div>
@@ -733,8 +828,8 @@ memory usage: 576.0 KB
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greater</span> <span class="o">=</span> <span class="n">cor</span><span class="o">.</span><span class="n">ge</span><span class="p">(</span><span class="mf">0.9</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">cor</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">cor</span><span class="p">)):</span>
         <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="p">:</span>
             <span class="k">continue</span>
         <span class="k">elif</span> <span class="n">greater</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]:</span>
@@ -750,20 +845,10 @@ memory usage: 576.0 KB
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
-<span class="c1">#Visible that dataset is imbalanced</span>
-</pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;vb3n&#39;, ylabel=&#39;count&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/US2016_Elections_code_10_1.png" src="_images/US2016_Elections_code_10_1.png" />
-</div>
-</div>
+<div class="section" id="encoding-the-categorical-value">
+<h2>Encoding the Categorical Value<a class="headerlink" href="#encoding-the-categorical-value" title="Permalink to this headline">¶</a></h2>
+<p>Encoding the different inputs as category numbers instead of using them directly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#One Hot Encoding of categorical variables</span>
@@ -1096,16 +1181,22 @@ memory usage: 576.0 KB
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="correcting-the-distribution-of-the-data">
+<h2>Correcting the Distribution of the data<a class="headerlink" href="#correcting-the-distribution-of-the-data" title="Permalink to this headline">¶</a></h2>
+<p>If the data is skewed, there might be issues down the line when it comes to learning.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+<span class="c1">#Mapping: 0 -&gt; 0, 97 -&gt; 1, 4001 -&gt; 2, 4002 -&gt; 3, 4003 -&gt; 4, 4004 -&gt; 5, 4077 -&gt; 6</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2, 2, 3, ..., 6, 1, 2])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;count&#39;&gt;
 </pre></div>
 </div>
+<img alt="_images/US2016_Elections_code_18_1.png" src="_images/US2016_Elections_code_18_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1125,9 +1216,23 @@ memory usage: 576.0 KB
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;count&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/US2016_Elections_code_21_1.png" src="_images/US2016_Elections_code_21_1.png" />
+</div>
+</div>
 </div>
 <div class="section" id="xgboost-classifier-model">
-<h1>XGBoost Classifier Model<a class="headerlink" href="#xgboost-classifier-model" title="Permalink to this headline">¶</a></h1>
+<h2>XGBoost Classifier Model<a class="headerlink" href="#xgboost-classifier-model" title="Permalink to this headline">¶</a></h2>
+<p>An <a class="reference external" href="https://xgboost.readthedocs.io/en/stable/">XGBoost</a> model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#XGBoost Classifier Model</span>
@@ -1171,13 +1276,12 @@ recall:0.82143
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;ROC Curves&#39;}, xlabel=&#39;False Positive Rate&#39;, ylabel=&#39;True Positive Rate&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/US2016_Elections_code_18_1.png" src="_images/US2016_Elections_code_18_1.png" />
+<img alt="_images/US2016_Elections_code_24_1.png" src="_images/US2016_Elections_code_24_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
-<span class="n">plot_importance</span><span class="p">(</span><span class="n">xgb</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_importance</span><span class="p">(</span><span class="n">xgb</span><span class="p">,</span> <span class="n">max_num_features</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1185,12 +1289,13 @@ recall:0.82143
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Feature importance&#39;}, xlabel=&#39;F score&#39;, ylabel=&#39;Features&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/US2016_Elections_code_19_1.png" src="_images/US2016_Elections_code_19_1.png" />
+<img alt="_images/US2016_Elections_code_25_1.png" src="_images/US2016_Elections_code_25_1.png" />
 </div>
 </div>
 </div>
 <div class="section" id="random-forest-classifier-model">
-<h1>Random Forest Classifier Model<a class="headerlink" href="#random-forest-classifier-model" title="Permalink to this headline">¶</a></h1>
+<h2>Random Forest Classifier Model<a class="headerlink" href="#random-forest-classifier-model" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">Random Forest</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Random Forest Classifier Model</span>
@@ -1220,9 +1325,25 @@ recall:0.83482
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">forest_importances</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">rf</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">forest_importances</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">forest_importances</span> <span class="o">=</span> <span class="n">forest_importances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>
+<span class="n">forest_importances</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="_images/US2016_Elections_code_28_1.png" src="_images/US2016_Elections_code_28_1.png" />
+</div>
+</div>
 </div>
 <div class="section" id="logistic-regression-model">
-<h1>Logistic Regression Model<a class="headerlink" href="#logistic-regression-model" title="Permalink to this headline">¶</a></h1>
+<h2>Logistic Regression Model<a class="headerlink" href="#logistic-regression-model" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Logistic Regression Model</span>
@@ -1256,9 +1377,41 @@ recall:0.79018
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Feature importance for logreg for Clinton</span>
+<span class="n">logreg_impt_clinton</span> <span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">index</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">logreg_impt_clinton</span> <span class="o">=</span> <span class="n">logreg_impt_clinton</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>
+<span class="n">logreg_impt_clinton</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="_images/US2016_Elections_code_31_1.png" src="_images/US2016_Elections_code_31_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Feature importance for logreg for Trump</span>
+<span class="n">logreg_impt_trump</span> <span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">index</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">logreg_impt_trump</span> <span class="o">=</span> <span class="n">logreg_impt_trump</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>
+<span class="n">logreg_impt_trump</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="_images/US2016_Elections_code_32_1.png" src="_images/US2016_Elections_code_32_1.png" />
+</div>
+</div>
 </div>
 <div class="section" id="ensemble-model-with-all-models">
-<h1>Ensemble Model with all models<a class="headerlink" href="#ensemble-model-with-all-models" title="Permalink to this headline">¶</a></h1>
+<h2>Ensemble Model with all models<a class="headerlink" href="#ensemble-model-with-all-models" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Ensemble model: RF + XGB + LR</span>
@@ -1279,276 +1432,61 @@ recall:0.79018
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [21],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#Ensemble model: RF + XGB + LR</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ensemble</span> <span class="o">=</span> <span class="n">VotingClassifier</span><span class="p">(</span><span class="n">estimators</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;lr&#39;</span><span class="p">,</span> <span class="n">logreg</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;xgb&#39;</span><span class="p">,</span> <span class="n">xgb</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;rf&#39;</span><span class="p">,</span> <span class="n">rf</span><span class="p">)],</span> <span class="n">voting</span> <span class="o">=</span> <span class="s1">&#39;soft&#39;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">ensemble</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">ensemble_pred</span> <span class="o">=</span> <span class="n">ensemble</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ensemble_pred_prob</span> <span class="o">=</span> <span class="n">ensemble</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/sklearn/ensemble/_voting.py:324,</span> in <span class="ni">VotingClassifier.fit</span><span class="nt">(self, X, y, sample_weight)</span>
-<span class="g g-Whitespace">    </span><span class="mi">321</span> <span class="bp">self</span><span class="o">.</span><span class="n">classes_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">le_</span><span class="o">.</span><span class="n">classes_</span>
-<span class="g g-Whitespace">    </span><span class="mi">322</span> <span class="n">transformed_y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">le_</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">324</span> <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">transformed_y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/sklearn/ensemble/_voting.py:74,</span> in <span class="ni">_BaseVoting.fit</span><span class="nt">(self, X, y, sample_weight)</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimators</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">68</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span>         <span class="s2">&quot;Number of `estimators` and weights must be equal&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span>         <span class="s2">&quot;; got </span><span class="si">%d</span><span class="s2"> weights, </span><span class="si">%d</span><span class="s2"> estimators&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span>         <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimators</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">74</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimators_</span> <span class="o">=</span> <span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_jobs</span><span class="p">)(</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span>     <span class="n">delayed</span><span class="p">(</span><span class="n">_fit_single_estimator</span><span class="p">)(</span>
-<span class="g g-Whitespace">     </span><span class="mi">76</span>         <span class="n">clone</span><span class="p">(</span><span class="n">clf</span><span class="p">),</span>
-<span class="g g-Whitespace">     </span><span class="mi">77</span>         <span class="n">X</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">78</span>         <span class="n">y</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">79</span>         <span class="n">sample_weight</span><span class="o">=</span><span class="n">sample_weight</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">80</span>         <span class="n">message_clsname</span><span class="o">=</span><span class="s2">&quot;Voting&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">81</span>         <span class="n">message</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_log_message</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">clfs</span><span class="p">)),</span>
-<span class="g g-Whitespace">     </span><span class="mi">82</span>     <span class="p">)</span>
-<span class="nn">     83     for idx, clf</span> in <span class="ni">enumerate</span><span class="nt">(clfs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">84</span>     <span class="k">if</span> <span class="n">clf</span> <span class="o">!=</span> <span class="s2">&quot;drop&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">85</span> <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">87</span> <span class="bp">self</span><span class="o">.</span><span class="n">named_estimators_</span> <span class="o">=</span> <span class="n">Bunch</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">89</span> <span class="c1"># Uses &#39;drop&#39; as placeholder for dropped estimators</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/joblib/parallel.py:1046,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1043</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dispatch_one_batch</span><span class="p">(</span><span class="n">iterator</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1044</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_iterating</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_original_iterator</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="ne">-&gt; </span><span class="mi">1046</span> <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">dispatch_one_batch</span><span class="p">(</span><span class="n">iterator</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1047</span>     <span class="k">pass</span>
-<span class="g g-Whitespace">   </span><span class="mi">1049</span> <span class="k">if</span> <span class="n">pre_dispatch</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span> <span class="ow">or</span> <span class="n">n_jobs</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1050</span>     <span class="c1"># The iterable was consumed all at once by the above for loop.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1051</span>     <span class="c1"># No need to wait for async callbacks to trigger to</span>
-<span class="g g-Whitespace">   </span><span class="mi">1052</span>     <span class="c1"># consumption.</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/joblib/parallel.py:861,</span> in <span class="ni">Parallel.dispatch_one_batch</span><span class="nt">(self, iterator)</span>
-<span class="g g-Whitespace">    </span><span class="mi">859</span>     <span class="k">return</span> <span class="kc">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">860</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">861</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_dispatch</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">862</span>     <span class="k">return</span> <span class="kc">True</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/joblib/parallel.py:779,</span> in <span class="ni">Parallel._dispatch</span><span class="nt">(self, batch)</span>
-<span class="g g-Whitespace">    </span><span class="mi">777</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">778</span>     <span class="n">job_idx</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">779</span>     <span class="n">job</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="o">.</span><span class="n">apply_async</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">cb</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">780</span>     <span class="c1"># A job can complete so quickly than its callback is</span>
-<span class="g g-Whitespace">    </span><span class="mi">781</span>     <span class="c1"># called before we get here, causing self._jobs to</span>
-<span class="g g-Whitespace">    </span><span class="mi">782</span>     <span class="c1"># grow. To ensure correct results ordering, .insert is</span>
-<span class="g g-Whitespace">    </span><span class="mi">783</span>     <span class="c1"># used (rather than .append) in the following line</span>
-<span class="g g-Whitespace">    </span><span class="mi">784</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">job_idx</span><span class="p">,</span> <span class="n">job</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/joblib/_parallel_backends.py:208,</span> in <span class="ni">SequentialBackend.apply_async</span><span class="nt">(self, func, callback)</span>
-<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="k">def</span> <span class="nf">apply_async</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">207</span>     <span class="sd">&quot;&quot;&quot;Schedule a func to be run&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">208</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">ImmediateResult</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="k">if</span> <span class="n">callback</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="n">callback</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/joblib/_parallel_backends.py:572,</span> in <span class="ni">ImmediateResult.__init__</span><span class="nt">(self, batch)</span>
-<span class="g g-Whitespace">    </span><span class="mi">569</span> <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">570</span>     <span class="c1"># Don&#39;t delay the application, to avoid keeping the input</span>
-<span class="g g-Whitespace">    </span><span class="mi">571</span>     <span class="c1"># arguments in memory</span>
-<span class="ne">--&gt; </span><span class="mi">572</span>     <span class="bp">self</span><span class="o">.</span><span class="n">results</span> <span class="o">=</span> <span class="n">batch</span><span class="p">()</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/joblib/parallel.py:262,</span> in <span class="ni">BatchedCalls.__call__</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">258</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">259</span>     <span class="c1"># Set the default nested backend to self._backend but do not set the</span>
-<span class="g g-Whitespace">    </span><span class="mi">260</span>     <span class="c1"># change the default number of processes to -1</span>
-<span class="g g-Whitespace">    </span><span class="mi">261</span>     <span class="k">with</span> <span class="n">parallel_backend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_n_jobs</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">262</span>         <span class="k">return</span> <span class="p">[</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">263</span>                 <span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">]</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/joblib/parallel.py:262,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">    </span><span class="mi">258</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">259</span>     <span class="c1"># Set the default nested backend to self._backend but do not set the</span>
-<span class="g g-Whitespace">    </span><span class="mi">260</span>     <span class="c1"># change the default number of processes to -1</span>
-<span class="g g-Whitespace">    </span><span class="mi">261</span>     <span class="k">with</span> <span class="n">parallel_backend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_n_jobs</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">262</span>         <span class="k">return</span> <span class="p">[</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">263</span>                 <span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">]</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/sklearn/utils/fixes.py:216,</span> in <span class="ni">_FuncWrapper.__call__</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">214</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">215</span>     <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">216</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/sklearn/ensemble/_base.py:42,</span> in <span class="ni">_fit_single_estimator</span><span class="nt">(estimator, X, y, sample_weight, message_clsname, message)</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">41</span>     <span class="k">with</span> <span class="n">_print_elapsed_time</span><span class="p">(</span><span class="n">message_clsname</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">42</span>         <span class="n">estimator</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="k">return</span> <span class="n">estimator</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/xgboost/core.py:532,</span> in <span class="ni">_deprecate_positional_args.&lt;locals&gt;.inner_f</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">530</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">arg</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">sig</span><span class="o">.</span><span class="n">parameters</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">531</span>     <span class="n">kwargs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">arg</span>
-<span class="ne">--&gt; </span><span class="mi">532</span> <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/xgboost/sklearn.py:1400,</span> in <span class="ni">XGBClassifier.fit</span><span class="nt">(self, X, y, sample_weight, base_margin, eval_set, eval_metric, early_stopping_rounds, verbose, xgb_model, sample_weight_eval_set, base_margin_eval_set, feature_weights, callbacks)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1379</span> <span class="n">model</span><span class="p">,</span> <span class="n">metric</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">early_stopping_rounds</span><span class="p">,</span> <span class="n">callbacks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_configure_fit</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1380</span>     <span class="n">xgb_model</span><span class="p">,</span> <span class="n">eval_metric</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">early_stopping_rounds</span><span class="p">,</span> <span class="n">callbacks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1381</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1382</span> <span class="n">train_dmatrix</span><span class="p">,</span> <span class="n">evals</span> <span class="o">=</span> <span class="n">_wrap_evaluation_matrices</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1383</span>     <span class="n">missing</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">missing</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1384</span>     <span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1397</span>     <span class="n">enable_categorical</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">enable_categorical</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1398</span> <span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1400</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Booster</span> <span class="o">=</span> <span class="n">train</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1401</span>     <span class="n">params</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1402</span>     <span class="n">train_dmatrix</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1403</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_num_boosting_rounds</span><span class="p">(),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1404</span>     <span class="n">evals</span><span class="o">=</span><span class="n">evals</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1405</span>     <span class="n">early_stopping_rounds</span><span class="o">=</span><span class="n">early_stopping_rounds</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1406</span>     <span class="n">evals_result</span><span class="o">=</span><span class="n">evals_result</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1407</span>     <span class="n">obj</span><span class="o">=</span><span class="n">obj</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1408</span>     <span class="n">custom_metric</span><span class="o">=</span><span class="n">metric</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1409</span>     <span class="n">verbose_eval</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1410</span>     <span class="n">xgb_model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1411</span>     <span class="n">callbacks</span><span class="o">=</span><span class="n">callbacks</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1412</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1414</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">objective</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1415</span>     <span class="bp">self</span><span class="o">.</span><span class="n">objective</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s2">&quot;objective&quot;</span><span class="p">]</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/xgboost/core.py:532,</span> in <span class="ni">_deprecate_positional_args.&lt;locals&gt;.inner_f</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">530</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">arg</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">sig</span><span class="o">.</span><span class="n">parameters</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">531</span>     <span class="n">kwargs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">arg</span>
-<span class="ne">--&gt; </span><span class="mi">532</span> <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/xgboost/training.py:181,</span> in <span class="ni">train</span><span class="nt">(params, dtrain, num_boost_round, evals, obj, feval, maximize, early_stopping_rounds, evals_result, verbose_eval, xgb_model, callbacks, custom_metric)</span>
-<span class="g g-Whitespace">    </span><span class="mi">179</span> <span class="k">if</span> <span class="n">cb_container</span><span class="o">.</span><span class="n">before_iteration</span><span class="p">(</span><span class="n">bst</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">dtrain</span><span class="p">,</span> <span class="n">evals</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span>     <span class="k">break</span>
-<span class="ne">--&gt; </span><span class="mi">181</span> <span class="n">bst</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dtrain</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">182</span> <span class="k">if</span> <span class="n">cb_container</span><span class="o">.</span><span class="n">after_iteration</span><span class="p">(</span><span class="n">bst</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">dtrain</span><span class="p">,</span> <span class="n">evals</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span>     <span class="k">break</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/xgboost/core.py:1733,</span> in <span class="ni">Booster.update</span><span class="nt">(self, dtrain, iteration, fobj)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1730</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_features</span><span class="p">(</span><span class="n">dtrain</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1732</span> <span class="k">if</span> <span class="n">fobj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1733</span>     <span class="n">_check_call</span><span class="p">(</span><span class="n">_LIB</span><span class="o">.</span><span class="n">XGBoosterUpdateOneIter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1734</span>                                             <span class="n">ctypes</span><span class="o">.</span><span class="n">c_int</span><span class="p">(</span><span class="n">iteration</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1735</span>                                             <span class="n">dtrain</span><span class="o">.</span><span class="n">handle</span><span class="p">))</span>
-<span class="g g-Whitespace">   </span><span class="mi">1736</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1737</span>     <span class="n">pred</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">dtrain</span><span class="p">,</span> <span class="n">output_margin</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">training</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>roc:0.81655
+f1:0.81972
+acc:0.82143
+prec:0.82292
+recall:0.82143
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Ensemble model: RF + XGB</span>
-<span class="n">ensemble</span> <span class="o">=</span> <span class="n">VotingClassifier</span><span class="p">(</span><span class="n">estimators</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;xgb&#39;</span><span class="p">,</span> <span class="n">xgb</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;rf&#39;</span><span class="p">,</span> <span class="n">rf</span><span class="p">)],</span> <span class="n">voting</span> <span class="o">=</span> <span class="s1">&#39;soft&#39;</span><span class="p">)</span>
-<span class="n">ensemble</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="n">ensemble_pred</span> <span class="o">=</span> <span class="n">ensemble</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="n">ensemble_pred_prob</span> <span class="o">=</span> <span class="n">ensemble</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="n">metrics</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;roc&#39;</span><span class="p">,</span> <span class="s1">&#39;f1&#39;</span><span class="p">,</span> <span class="s1">&#39;acc&#39;</span><span class="p">,</span> <span class="s1">&#39;prec&#39;</span><span class="p">,</span> <span class="s1">&#39;recall&#39;</span><span class="p">]</span>
-<span class="n">roc</span> <span class="o">=</span> <span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">ensemble_pred_prob</span><span class="p">,</span> <span class="n">multi_class</span> <span class="o">=</span> <span class="s1">&#39;ovo&#39;</span><span class="p">,</span> <span class="n">average</span> <span class="o">=</span> <span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
-<span class="n">f1</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">ensemble_pred</span><span class="p">,</span> <span class="n">average</span> <span class="o">=</span> <span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
-<span class="n">acc</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">ensemble_pred</span><span class="p">)</span>
-<span class="n">prec</span> <span class="o">=</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">ensemble_pred</span><span class="p">,</span> <span class="n">average</span> <span class="o">=</span> <span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
-<span class="n">recall</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">ensemble_pred</span><span class="p">,</span> <span class="n">average</span> <span class="o">=</span> <span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
-<span class="n">ens_scores</span> <span class="o">=</span> <span class="p">[</span><span class="n">roc</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span> <span class="n">acc</span><span class="p">,</span> <span class="n">prec</span><span class="p">,</span> <span class="n">recall</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">metrics</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;:&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">ens_scores</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">5</span><span class="p">)))</span>
-</pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>roc:0.83015
-f1:0.81936
-acc:0.82589
-prec:0.82254
-recall:0.82589
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Ensemble model: LR + XGB</span>
-<span class="n">ensemble</span> <span class="o">=</span> <span class="n">VotingClassifier</span><span class="p">(</span><span class="n">estimators</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;lr&#39;</span><span class="p">,</span> <span class="n">logreg</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;rf&#39;</span><span class="p">,</span> <span class="n">rf</span><span class="p">)],</span> <span class="n">voting</span> <span class="o">=</span> <span class="s1">&#39;soft&#39;</span><span class="p">)</span>
-<span class="n">ensemble</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="n">ensemble_pred</span> <span class="o">=</span> <span class="n">ensemble</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="n">ensemble_pred_prob</span> <span class="o">=</span> <span class="n">ensemble</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="n">metrics</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;roc&#39;</span><span class="p">,</span> <span class="s1">&#39;f1&#39;</span><span class="p">,</span> <span class="s1">&#39;acc&#39;</span><span class="p">,</span> <span class="s1">&#39;prec&#39;</span><span class="p">,</span> <span class="s1">&#39;recall&#39;</span><span class="p">]</span>
-<span class="n">roc</span> <span class="o">=</span> <span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">ensemble_pred_prob</span><span class="p">,</span> <span class="n">multi_class</span> <span class="o">=</span> <span class="s1">&#39;ovo&#39;</span><span class="p">,</span> <span class="n">average</span> <span class="o">=</span> <span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
-<span class="n">f1</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">ensemble_pred</span><span class="p">,</span> <span class="n">average</span> <span class="o">=</span> <span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
-<span class="n">acc</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">ensemble_pred</span><span class="p">)</span>
-<span class="n">prec</span> <span class="o">=</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">ensemble_pred</span><span class="p">,</span> <span class="n">average</span> <span class="o">=</span> <span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
-<span class="n">recall</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">ensemble_pred</span><span class="p">,</span> <span class="n">average</span> <span class="o">=</span> <span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
-<span class="n">ens_scores</span> <span class="o">=</span> <span class="p">[</span><span class="n">roc</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span> <span class="n">acc</span><span class="p">,</span> <span class="n">prec</span><span class="p">,</span> <span class="n">recall</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">metrics</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;:&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">ens_scores</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">5</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>roc:0.81349
-f1:0.79844
-acc:0.79911
-prec:0.80238
-recall:0.79911
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\users\jhsib\appdata\local\programs\python\python39\lib\site-packages\sklearn\metrics\_classification.py:1318: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
-  _warn_prf(average, modifier, msg_start, len(result))
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save the model as a pickle file</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;model.h&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">bin_dat</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">ensemble</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Laod the model from a pickle file</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;model.h&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">loaded_model</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
-    
-<span class="n">ensemble_pred</span> <span class="o">=</span> <span class="n">ensemble</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="n">ensemble_pred_prob</span> <span class="o">=</span> <span class="n">ensemble</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="n">metrics</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;roc&#39;</span><span class="p">,</span> <span class="s1">&#39;f1&#39;</span><span class="p">,</span> <span class="s1">&#39;acc&#39;</span><span class="p">,</span> <span class="s1">&#39;prec&#39;</span><span class="p">,</span> <span class="s1">&#39;recall&#39;</span><span class="p">]</span>
-<span class="n">roc</span> <span class="o">=</span> <span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">ensemble_pred_prob</span><span class="p">,</span> <span class="n">multi_class</span> <span class="o">=</span> <span class="s1">&#39;ovo&#39;</span><span class="p">,</span> <span class="n">average</span> <span class="o">=</span> <span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
-<span class="n">f1</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">ensemble_pred</span><span class="p">,</span> <span class="n">average</span> <span class="o">=</span> <span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
-<span class="n">acc</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">ensemble_pred</span><span class="p">)</span>
-<span class="n">prec</span> <span class="o">=</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">ensemble_pred</span><span class="p">,</span> <span class="n">average</span> <span class="o">=</span> <span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
-<span class="n">recall</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">ensemble_pred</span><span class="p">,</span> <span class="n">average</span> <span class="o">=</span> <span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
-<span class="n">ens_scores</span> <span class="o">=</span> <span class="p">[</span><span class="n">roc</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span> <span class="n">acc</span><span class="p">,</span> <span class="n">prec</span><span class="p">,</span> <span class="n">recall</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">metrics</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;:&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">ens_scores</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">5</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>roc:0.81349
-f1:0.79844
-acc:0.79911
-prec:0.80238
-recall:0.79911
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\users\jhsib\appdata\local\programs\python\python39\lib\site-packages\sklearn\metrics\_classification.py:1318: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
-  _warn_prf(average, modifier, msg_start, len(result))
-</pre></div>
-</div>
-</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Area Under ROC</p></th>
+<th class="head"><p>F1 Scores</p></th>
+<th class="head"><p>Accuracy</p></th>
+<th class="head"><p>Precision</p></th>
+<th class="head"><p>Recall</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>XGBoost</p></td>
+<td><p>0.81453</p></td>
+<td><p>0.81088</p></td>
+<td><p>0.81696</p></td>
+<td><p>0.81349</p></td>
+<td><p>0.81969</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Random Forest</strong></p></td>
+<td><p><strong>0.83605</strong></p></td>
+<td><p><strong>0.83834</strong></p></td>
+<td><p><strong>0.83482</strong></p></td>
+<td><p><strong>0.84874</strong></p></td>
+<td><p><strong>0.83482</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Logistic Regression</p></td>
+<td><p>0.7623</p></td>
+<td><p>0.79298</p></td>
+<td><p>0.79018</p></td>
+<td><p>0.79819</p></td>
+<td><p>0.79018</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ensemble with all models</p></td>
+<td><p>0.81764</p></td>
+<td><p>0.81972</p></td>
+<td><p>0.82143</p></td>
+<td><p>0.82292</p></td>
+<td><p>0.82143</p></td>
+</tr>
+</tbody>
+</table>
+<p>As the random forest algorithm performed the best among all of the models (Including the Ensemble).
+For deployment, we will be using the RandomForest algorithm with the prediction when this is applied based on the metric.</p>
 </div>
 </div>
 
