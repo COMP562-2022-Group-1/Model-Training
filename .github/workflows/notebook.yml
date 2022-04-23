@@ -27,11 +27,10 @@ jobs:
     - name: Build the book
       run: |
         jupyter-book build US2016_Elections_code.ipynb
-        ls
 
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.6.1
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./_build/html
+        publish_dir: ./_build/_page/US2016_Elections_code/html/US2016_Elections_code.html
